@@ -25,6 +25,8 @@ namespace Fishy_Notes
 
         private void Delete_Click(object sender, EventArgs e)
         {
+            //Garbage collection cleaning unused memory when form is closed
+            GC.Collect();
             //Disposes the fishynote form meaning it can be re opened
             Dispose(true);
         }
