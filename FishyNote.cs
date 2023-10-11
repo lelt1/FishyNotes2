@@ -14,13 +14,25 @@ namespace Fishy_Notes
     {
         //Bool for whether the textbox has been shrunk or expanded
         bool Shrunk = false;
-        private const String _imagePathName = @"..\..\FishAssets\OrangeFish_Right_Face";
+        private const String _imagePathName = @"..\..\OrangeFish_Right_Face.png";
         private ImageHandler _imageHandler;
         public FishyNote()
         {
             InitializeComponent();
             //Set form autosize to true so later when shrink button is used it will change form size with or without textbox
             this.AutoSize = true;
+            try
+            {
+                this._imageHandler = new ImageHandler(_imagePathName);
+            }
+            catch (InvalidStringException e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                this._imageHandler = new ImageHandler();
+            }
+            this.Collapse.Image = this._imageHandler.LoadedImage;
+            Collapse.AutoSize = true;
+            Collapse.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
         private void Delete_Click(object sender, EventArgs e)
         {
