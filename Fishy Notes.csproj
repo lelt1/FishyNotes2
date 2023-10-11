@@ -59,6 +59,8 @@
     <Compile Include="FishyNotes.Designer.cs">
       <DependentUpon>FishyNotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageHandler.cs" />
+    <Compile Include="InvalidStringException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FishyNote.resx">

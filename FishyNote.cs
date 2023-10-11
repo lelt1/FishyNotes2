@@ -14,15 +14,14 @@ namespace Fishy_Notes
     {
         //Bool for whether the textbox has been shrunk or expanded
         bool Shrunk = false;
-        //Bool to check if the text in the note has be
-        bool text = false;
+        private const String _imagePathName = @"..\..\FishAssets\OrangeFish_Right_Face";
+        private ImageHandler _imageHandler;
         public FishyNote()
         {
             InitializeComponent();
             //Set form autosize to true so later when shrink button is used it will change form size with or without textbox
             this.AutoSize = true;
         }
-
         private void Delete_Click(object sender, EventArgs e)
         {
             //Garbage collection cleaning unused memory when form is closed
@@ -30,7 +29,6 @@ namespace Fishy_Notes
             //Disposes the fishynote form meaning it can be re opened
             Dispose(true);
         }
-
         private void Collapse_Click(object sender, EventArgs e)
         {
             //Using bool check if the form has already been shrunk using button or not
@@ -49,13 +47,11 @@ namespace Fishy_Notes
                 Collapse.Text = "Expand";
             }
         }
-
         private void WrittenNote_MouseClick(object sender, MouseEventArgs e)
         {
             //Empty the string inside of the writtennote textbox
             WrittenNote.Text = String.Empty;
         }
-
         #region Code Snippet: makes this borderless window movable
         // Modified from https://stackoverflow.com/a/24561946 and attributed to user jay_t55
 
