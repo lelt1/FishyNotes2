@@ -12,23 +12,20 @@ namespace Fishy_Notes
 {
     public partial class FishyNotes : Form
     {
-        Form _newNote;
-        public FishyNotes()
+        private IList<Form> _noteList;
+        //When the More Fish button is clicked it will create a new form to enter a note
+        public FishyNotes(IList<Form> noteList)
         {
             InitializeComponent();
+            _noteList = noteList;
         }
-        //When the More Fish button is clicked it will create a new form to enter a note
+
         private void AddNote_Click(object sender, EventArgs e)
         {
-            if (_newNote == null || _newNote.IsDisposed)
-            {
-                _newNote = null;
-            }
-            if (_newNote == null)
-                {
-                _newNote = new FishyNote();
-                _newNote.Show();
-            }
+            //If the newNote form is null or it has been disposed (when close button is clicked)
+                Form newNote = new FishyNote();
+                _noteList.Add(newNote);
+                newNote.Show();
         }
 
         private void FishyNotes_Load(object sender, EventArgs e)

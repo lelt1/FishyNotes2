@@ -12,21 +12,26 @@ namespace Fishy_Notes
 {
     public partial class FishyNote : Form
     {
+        //Bool for whether the textbox has been shrunk or expanded
         bool Shrunk = false;
+        //Bool to check if the text in the note has be
+        bool text = false;
         public FishyNote()
         {
             InitializeComponent();
+            //Set form autosize to true so later when shrink button is used it will change form size with or without textbox
             this.AutoSize = true;
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-
+            //Disposes the fishynote form meaning it can be re opened
             Dispose(true);
         }
 
         private void Collapse_Click(object sender, EventArgs e)
         {
+            //Using bool check if the form has already been shrunk using button or not
             if (Shrunk == true)
             {
                 Shrunk = false;
@@ -43,9 +48,10 @@ namespace Fishy_Notes
             }
         }
 
-        private void WrittenNote_TextChanged(object sender, EventArgs e)
+        private void WrittenNote_MouseClick(object sender, MouseEventArgs e)
         {
-            WrittenNote.Text = "";
+            //Empty the string inside of the writtennote textbox
+            WrittenNote.Text = String.Empty;
         }
 
         #region Code Snippet: makes this borderless window movable
@@ -90,5 +96,9 @@ namespace Fishy_Notes
         }
         #endregion
 
+        private void WrittenNote_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

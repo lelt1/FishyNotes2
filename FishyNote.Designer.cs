@@ -41,6 +41,7 @@
             this.WrittenNote.TabIndex = 0;
             this.WrittenNote.Text = "Insert note...";
             this.WrittenNote.TextChanged += new System.EventHandler(this.WrittenNote_TextChanged);
+            this.WrittenNote.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WrittenNote_MouseClick);
             // 
             // Delete
             // 
@@ -75,6 +76,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FishyNote";
             this.Text = "FishyNote";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FishyNote_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FishyNote_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FishyNote_MouseUp);
             this.ResumeLayout(false);
 
         }

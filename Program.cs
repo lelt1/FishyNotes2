@@ -16,7 +16,8 @@ namespace Fishy_Notes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FishyNotes());
+            
+            Controller controller = new Controller();
         }
     }
 }

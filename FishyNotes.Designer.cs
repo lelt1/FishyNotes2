@@ -47,6 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(319, 219);
             this.Controls.Add(this.AddNote);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FishyNotes";
             this.Text = "FishyNotes";
             this.Load += new System.EventHandler(this.FishyNotes_Load);
